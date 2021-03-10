@@ -1,0 +1,256 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{multirow,array}
+\usepackage[margin=25mm]{geometry}  % adjusts page layout
+\usepackage{parskip}
+\usepackage{pgfplots}
+
+
+\title{Uncertainty in a dynamic game of R\&D with positive externalities}
+\author{Lu Hao}
+\date{January 2020}
+
+\begin{document}
+
+\maketitle
+\section{Basic model derivation} 
+
+\subsection{Competition in both stages}
+
+Total demand is given by 
+
+\begin{equation*}
+    P = a - bQ \text{ with a, b $>$ 0 and}\\
+\end{equation*}
+
+Cost to firm $i$ is given by
+\begin{align*}
+    &C_i(q_i,x_i,x_j) = [\alpha-x_i-\beta x_j]q_i \text{ i $=$ 1,2 and $i$ $\ne$ $j$} \\
+    &\text{with $0<\alpha<a$, $0<\beta<1$; $x_i + \beta x_j \leq \alpha$; $Q \leq a/b$}
+\end{align*}
+
+The profit of firm 1 is given by: 
+\begin{align*}
+    \pi_1 &= (a-bQ)q_i - [A - x_1 -\beta x_2]q_1 - \gamma \frac{x_1^2}{2}\\
+    &= (a - bq_2 - \alpha +x_1 +\beta x_2)q_1 - bq_qˆ2 -\gamma \frac{x_1ˆ2}{2}\\
+\end{align*}
+
+The first order condition is given by: 
+\begin{align*}
+    \pi_1'(q_1) &= (a - bq_2 - \alpha + x_1 +\beta x_2) - 2bq_1 = 0 \\
+    q_1ˆ* &= \frac{a-bq_2 - \alpha + x_1 + \beta x_2}{2b}
+\end{align*}
+
+
+Firm 1's best response given firm 2's production quantity $q_2$ is 
+\begin{equation*}
+q_1^*=\frac{a-bq_2-\alpha+x_1+\beta x_2}{2b}   
+\end{equation*}
+
+
+The Nash-Cournot equilibrium can be computed to be 
+\begin{equation*}
+q_1^* = \frac{a-\alpha+(2-\beta)x_1+(2\beta-1)x_2}{3b}
+\end{equation*}
+
+
+In the first stage, when firms decide on R\&D expenditure, the profit can be expressed as
+\begin{align}
+    \pi_1^* &= bq_1^{*2} - \gamma\frac{x_1^2}{2} \\
+    &= \frac{1}{9b}[a-\alpha+(2-\beta)x_1+(2\beta-1)x_2]^2 - \gamma\frac{x_1^2}{2} 
+\end{align}
+
+
+The first order condition gives firm 1's best response function\footnote{ The second order condition is $\frac{2(2-\beta)^2}{9b} < \gamma$}
+\begin{align}
+    x_1^* = \frac{2(2-\beta)(a-\alpha+(2\beta -1)x_2)}{9b\gamma-2(2-\beta)^2} 
+\end{align}
+
+
+Assuming a symmetric solution, we obtain
+\begin{align*}
+    x_1^* = \frac{a-\alpha+(2\beta -1)}{4.5b\gamma-(2-\beta)(1+\beta)} 
+\end{align*}
+
+The profit for each firm is 
+\begin{align*}
+    \pi^* = \frac{1}{9b}[a-\alpha + (1+\beta)x^*] - \gamma\frac{x^{*2}}{2} 
+\end{align*}
+
+\subsection{Cooperation in R\&D stage}
+
+If both firms cooperate at the R\&D stage, assuming a symmetric solution, they choose a R\&D level $x_1 = x_2 = \hat{x}$ to maximise joint profits from (2)
+\begin{align*}
+\hat{\pi} &= \pi_1^* + \pi_2^*\\
+    &= \frac{1}{9b} \sum_{i=1}^2\left\{[(a-\alpha) + (2-\beta)x_i + (2\beta -1)x_j]^2-\gamma\frac{x_i^2}{2}\right\}
+\end{align*}
+The symmetric solution is
+\begin{align*}
+\hat{x} = \frac{(a-\alpha)(1+\beta}{4.5b\gamma-(1+\beta)^2} 
+\end{align*}
+Note that for $\beta > \frac{1}{2} $, $\hat{x}>x^*$. The corresponding profits are also higher. 
+
+\section{Sustaining cooperation in a repeated game}
+
+While D'Aspremont and Jacquemin's paper notes that 'private incentives, independently of any public policy, can be sufficient to lead to such a cooperation', this conclusion is predicated upon an enforceable binding agreement. Without such, there is an incentive for each firm to lower individual in R\&D since the reduction in R\&D expenditure outweighs the cost savings. We can show this by using firm 1's best response function assuming firm 2 chooses $\hat{x}$, which gives us, for $\beta > 0.5$
+
+\begin{equation*}
+    \tilde{x} = \frac{2(2-\beta)(a-\alpha+(2\beta -1)\hat{x})}{9b\gamma-2(2-\beta)^2} < \hat{x}
+\end{equation*}
+
+In a repeated game setting, the stage game payoffs will be
+
+\begin{table}[h]
+    \centering
+    \setlength{\extrarowheight}{2pt}
+        \begin{tabular}{cc|c|c|}
+          & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Player $2$}\\
+          & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$x^*$}  & \multicolumn{1}{c}{$\hat{x}$} \\\cline{3-4}
+          \multirow{2}*{Player $1$}  & $x^*$ & $(\pi^*,\pi^*)$ & $(a,b)$ \\\cline{3-4}
+          & $\hat{x}$ & $(b,a)$ & $(\hat{\pi},\hat{\pi})$ \\\cline{3-4}
+    \end{tabular}
+\end{table}
+
+Here, $x^*$ refers to using a best response defined in equation (3) given the other player's strategy. For $\beta > 0.5$, we have $a>\hat{\pi}>\pi^*>b$, giving us the standard prisoners' dilemma set up. For a better visualisation of the interaction between R\&D investment amount and profits. In the following analysis we assume the discount rate to be $\delta$.
+
+
+% see Figures \ref{graph1}, \ref{graph2} and \ref{graph3}.
+
+% \begin{figure}[h!]
+% \centering
+%         \begin{tikzpicture}
+%           \begin{axis}[domain=0:3,y domain=0:3]
+%             \addplot3[surf] {0.11111*(2+1.25*x+0.5*y)^2 - 0.5*x^2};
+%           \end{axis}
+%         \end{tikzpicture}
+%         \caption{$\pi_1$ as a function of $x_1$ and $x_2$}
+%         \label{graph1}
+% \end{figure}
+
+% \begin{figure}[h!]
+% \centering
+%         \begin{tikzpicture}
+%           \begin{axis}[domain=0:3,y domain=0:3]
+%             \addplot3[surf] {0.11111*(2+1.25*y+0.5*x)^2 - 0.5*y^2};
+%           \end{axis}
+%         \end{tikzpicture}
+%         \caption{$\pi_2$ as a function of $x_1$ and $x_2$}
+% \label{graph2}
+% \end{figure}
+
+% \begin{figure}[h!]
+% \centering
+% \begin{tikzpicture}
+%   \begin{axis}[domain=0:3,y domain=0:3]
+%     \addplot3[surf] {0.11111*(2+1.25*y+0.5*x)^2 - 0.5*y^2 + 0.11111*(2+1.25*x+0.5*y)^2 - 0.5*x^2};
+%   \end{axis}
+% \end{tikzpicture}
+% \caption{$\pi_1 + \pi_2$ as a function of $x_1$ and $x_2$}
+% \label{graph3}
+% \end{figure}
+
+\subsection{Uncertainty in positive the externality}
+
+One peculiar feature of the D'Aspremont and Jacquemin model is its lack of uncertainty. Numerous studies have been done on the stochastic nature of R\&D due to its uncertainty inR\&D payoffs. (Reinganum, 1989) Here, we extend the D'Aspremont and Jacquemin model by introducing uncertainty in the amount of positive externality one firm's R\&D has on the other firm's unit production cost. In our model, the cost of production is given by $C_i(q_i, x_i, x_j) = [A - x_i - \beta y_j]q_i$, where $y_j = x_j + \theta$, and $\theta$ follows a cumulative distribution $F(\theta)$. This is motivated by the fact that while firm $i$'s R\&D is deterministic, its appropriability to firm $j$ varies with firm j's absorptive capacity(Confessore and Mancuso, 2002), patent regulations (Spence, 1984) and imitation costs, all of which can be time variant. 
+
+\subsection{Observable $x$'s}
+
+When the x's are observable, cooperation in the repeated game can be maintained by a infinite grim trigger strategy. Suppose $\theta$ is realised after R\&D investments have been decided, the optimal level of R\&D, $\hat{x}$, can be maintained in every period if 
+
+\begin{equation*}
+    E[\pi(\tilde{x}, \hat{x_2},\theta)] - E[\pi(\hat{x_1}, \hat{x_2},\theta)] >  E\left[\sum_{t=1}^\infty \delta^t \pi(\hat{x}_1,\hat{x}_2,\theta)) - \delta^t \pi(x_1^*,x_2^*,\theta)) \right]
+\end{equation*}
+
+If $\theta$ is realised before R\&D is decided, the condition becomes
+
+\begin{equation*}
+    \pi(\tilde{x}, \hat{x_2},\theta_1) - \pi(\hat{x_1}, \hat{x_2},\theta_1) >  E\left[\sum_{t=1}^\infty \delta^t \pi(\hat{x}_1,\hat{x}_2,\theta)) - \delta^t \pi(x_1^*,x_2^*,\theta)) \right]
+\end{equation*}
+
+\subsection{Unobservable $x$'s, obeservable $y$'s}
+
+
+In the more realistic scenario when only $y$ is observed, we are unable to use a infinite grim trigger strategy to sustain cooperation because firms cannot discern cheating from a low realisation of $\theta$. However, the problem becomes similar to that addressed in Green and Porter's model of oligopoly collusion under uncertainty (Green and Porter, 1984). Partial cooperation in this repeated game is sustained by a finite trigger strategy whereby punishment is triggered for T periods if the observable $y$ falls below a threshold $\Bar{y}$. Assuming players play the stage-game Nash equilibrium $(x*,x*)$ in the punishment phase and $(\mu,\mu)$ in the cooperation phase, a Nash Equilibrium can be wholly characterised by $(x^*,\mu, T, \Bar{y})$. More formally, period t is the cooperation phase if  
+
+\begin{align*}
+&t=0 \text{, or}\\
+&t-1 \text{ is a cooperation phase and } y_t>\Bar{y}\\
+&t-T \text{ is a cooperation phase and } y_{t-T}<\Bar{y}  
+\end{align*}
+
+Otherwise, period t is a punishment phase. 
+
+We can now identify the necessary condition for the existence such an equilibrium. First we define the following variables  
+
+\begin{equation*}
+\hat{V}_i(x_1,x_2) = \mathop{\mathbb{E}}_\theta \sum_{t=0}^\infty \delta^t \pi_i(x_1,x_2,\theta)
+\end{equation*}
+
+\begin{equation*}
+V_1(x_1) = \hat{V}_1(x_1,\mu) \quad\text{and}\quad V_2(x_2) = \hat{V}_1(\mu,x_2)
+\end{equation*}
+
+\begin{equation*}
+\gamma_1(x_1) = \mathop{\mathbb{E}}_\theta \pi_1(x_1,\mu,\theta) \quad\text{and}\quad 
+\gamma_2(x_2) = \mathop{\mathbb{E}}_\theta \pi_1(\mu,x_2,\theta)
+\end{equation*}
+
+\begin{equation*}
+\sigma_1 = \mathop{\mathbb{E}}_\theta \pi_1(x_1^*,x_2^*,\theta) \quad\text{and}\quad 
+\sigma_2 = \mathop{\mathbb{E}}_\theta \pi_2(x_1^*,x_2^*,\theta)
+\end{equation*}
+
+Now, due to the stationary nature of the game, $V_1(x_1)$ satisfy the equation
+
+\begin{equation}
+V_1(x_1) = \gamma_1(x_1) + \delta \Pr(y_2>\Bar{y} \land y_1>\Bar{y})V_1(x_1) + [1-\Pr(y_2>\Bar{y} \land y_1>\Bar{y})]\left[\sum_{t=1}^{t-1} \delta^t \sigma_1+\delta^T V_1(x_1)\right]
+\label{V1equation}
+\end{equation}
+
+Assuming the shocks, $\theta$, on $x_1$ and $x_2$ are independent, the probabilities can be expressed in terms of the cumulative distribution function, $F$, giving us
+
+\begin{align*}
+\Pr(y_2>\Bar{y} \land y_1>\Bar{y}) &= 1 - F(\Bar{y} - x_1) - F(\bar{y} - x_2) + F(\bar{y}-x_1)F(\bar{y}-x_2)\\
+&= 1-s_1-s_2+s_1s_2
+\end{align*}
+
+Rearranging and simplifying equation \ref{V1equation}, we have 
+
+\begin{align*}
+V_1(x_1) &= \frac{\gamma_1(x_1) + (s_1+s_2-s_1s_2)\sigma_1 \frac{\delta - \delta^T}{1-\delta}}{1-\delta+(s_1+s_2-s_1s_2)(\delta-\delta^T)}\\
+&= \frac{\gamma_1(\x_1) - \sigma_1}{1-\delta +(s_1+s_2-s_1s_2)(\delta-\delta^T)} + \frac{\sigma_1}{1-\delta}
+\end{align*}
+
+For $(\mu,\mu)$ to be a Nash Equilibrium, we must have 
+\begin{align*}
+V_1(\mu) &\geq V_1(x_1), \quad\text{for all } x_1 \text{ and }\\
+V_2(\mu) &\geq V_2(x_2), \quad\text{for all } x_2
+\end{align*}
+
+The first order conditions are 
+\begin{align*}
+V_1'(\mu) = 0\\
+V_2'(\mu) = 0
+\end{align*}
+
+Which gives
+
+\begin{equation}
+[1-\delta + s_1s_2(\delta-\delta^T)]\gamma_1'(\mu) + (\gamma_1(\mu)-\sigma_1)(\delta-\delta^T)F(\bar{y} - x_2)f(\bar{y}-\mu) = 0
+\label{nescond}
+\end{equation}
+
+Equation \ref{nescond} states the necessary condition for the existence of a Nash Equilibrium with finite trigger strategies described above. The idea behind this equilibrium is that the punishment phase is triggered even if it is caused by a large negative realisation of $\theta$. Although punishment happens even when nobody cheats, the punishment provides the disincentive against cheating. Thus, in equilibrium, while periods of punishment phases do happen, no firm has an incentive to deviate from their cooperative equilibrium strategy
+
+\section{extensions}
+
+At the moment I can considering continuing with the following:
+
+1. Elaborate on the behaviour of $\gamma_1'(\mu)$ and when (5) is fulfilled\\
+2a. Welfare considerations ($\mu$ is likely smaller than $\hat{x}$, evaluation extent of welfare loss when y observable vs when y is not observable)\\
+2b. make policy recommendations when after welfare evaluations have been made
+3. Numerical simulation (Has to determine what parameters to choose?)\\
+4. In the above framework, both firms gets punished even when one $y$ of one firm falls under the threshold. Is there another cooperation inducing equilibrium with asymmetric punishment?
+5. Can you look up folk's theorem under uncertainty??! Maybe every payoff if attainable.
+\end{document}

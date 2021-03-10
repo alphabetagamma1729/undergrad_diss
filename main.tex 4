@@ -1,0 +1,573 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{multirow,array}
+\usepackage[margin=25mm]{geometry}  % adjusts page layout
+\usepackage{parskip}
+\usepackage{pgfplots}
+\usepackage{amsthm}
+\usepackage[bb=boondox]{mathalfa}
+\renewcommand{\baselinestretch}{1.5}
+%Here we define more numbered environments
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}{Corollary}[proposition]
+\newtheorem{lemma}[proposition]{Lemma}
+\newtheorem{remark}{Remark}
+\newtheorem{definition}{Definition}[section]
+
+\title{Uncertainty in a dynamic game of R\&D with positive externalities}
+\author{Lu Hao}
+\date{January 2020}
+
+\begin{document}
+
+\maketitle
+\section{Abstract} 
+
+This dissertation extends the static model of Claude d'Aspremont and Alexis Jacquemin (1988) by considering a repeated version of the R\&D game in which cost of production decreases with both firms’ R\&D. I introduce uncertainty into R\&D outcomes and externalities and evaluate their impact on the possibility of cooperative R\&D strategies. In particular, I look at models of perfect private monitoring, imperfect public monitoring and imperfect private monitoring. I find the necessary condition for partial cooperation under imperfect public monitoring using a finite trigger strategy. It is also shown that such partial cooperation is not feasible under imperfect private monitoring. I compare welfare results of the different models and discuss policy implications. 
+
+\section{Introduction}
+
+The D'Aspremont and Jacquemin (1998) model considers a Cournot game in which firms can invest in R\&D (Stage 1) prior to selecting output quantity (Stage 2). Two of the cases analysed are of interest in my analysis. In the case of \textit{pure competitive play}, firms compete in both stages of the game. In the \textit{cooperative R\&D play}, firms cooperate in the R\&D phase but behave competitively in choosing output. The main conclusion of the model was that cooperation in the R\&D stage can have a positive social welfare impact due to the positive spillovers generated - it was shown that for large spillovers, total output from cooperative R\&D play is closer to the socially optimal level than that from pure competitive play. 
+
+One concern with this conclusion, however, is with the sustainability of cooperative R\&D play in a repeated game. While the paper notes that 'private incentives, independently of any public policy, can be sufficient to lead to such a cooperation', this supposition is predicated upon an enforceable binding agreement. Without such, high investment in R\&D may not be non-cooperatively sustainable. I investigate this problem by looking at the effect of different types of R\&D uncertainty on strategy sustainability and social welfare. 
+
+\section{Literature Review}
+
+\subsection{Qualitative Analysis}
+
+Talk about examples of R\&D in duopolies and the problems they face. 
+
+\subsection{Quantitative Analysis}
+
+\newpage
+\section{Basic Model}
+
+In the D'Aspremont and Jacquemin's (1988) duopoly model, the inverse demand function is given by $P = a-bQ$, with $a,b > 0$, $Q = q_i + q_j$  and cost function for each firm is $C_i(q_i, x_i, x_j) = [\alpha - x_i - \beta x_j]q_i - \gamma \frac{x_i^2}{2}$. The first term shows that $j$'s R\&D expenditure $x_j$ has a positive externality and decreases firm $i$'s unit cost of production while the second terms shows a quadratic cost to R\&D investment. The game consist of two stages: First, both firms decide simultaneously the amount of R\&D ($x_i , x_j$). Then, having observed the R\&D levels, both firms decide simultaneously the amount of output ($q_i, q_j$). We impose four reasonable constraints in this model.
+\begin{align}
+0 < &\alpha < a\\
+0 < &\beta < 1\\
+x_i + \beta &x_j \leq \alpha\\
+0 \leq &Q \leq \frac{a}{b}
+\end{align}
+
+The first condition ensure that the higher possible unit cost is lower than the higher possible price. The constraint on $\beta$ guarantees a firm $i$'s R\&D investment has a bigger impact on firm $i$ than firm $j$. The third condition ensures positive unit costs and the last condition ensures that price is positive.  
+
+For welfare comparisons, we adopt the social welfare function from the paper. 
+
+\begin{definition}
+\label{welfareFunction}
+The \textbf{utilitarian welfare function} is given by the sum of consumer and producer surplus. In a symmetric equilibrium where $x = x_i = x_j$, it can be expressed as
+\begin{equation}
+\label{welfareFunction1}
+W(Q) = aQ - \frac{1}{2}bQ^2 - \alpha Q + (1+\beta)xQ - \gamma x^2
+\end{equation}
+where $aQ - \frac{1}{2}bQ^2$ represents the sum of consumer and producer surplus\\
+$(\alpha - (1+\beta)x)Q$ represents total production costs\\
+$\gamma x^2$ represents total R\&D costs
+\end{definition}
+
+
+\begin{definition}
+\label{cooperative R&D play}
+In \textbf{cooperative R\&D play}, firms jointly decide R\&D expenditures in the first stage and separately decide production quantities in the second stage. 
+\end{definition}
+
+\begin{definition}
+\label{pure competitive play}
+In \textbf{pure competitive play}, firms decide both R\&D expenditures and separately decide production quantities separately.
+\end{definition}
+
+We restate the welfare conclusion of the D'Aspremont and Jacquemin (1998) paper in the following proposition.
+
+\begin{proposition}
+
+\label{lemma1}
+Under the second order conditions, $9b\gamma > 2(2-\beta)^2$ and $9b\gamma > 2(1+\beta)^2$, and large spillovers, $\beta>\frac{1}{2}$, the Nash equilibrium total R\&D expenditure and output is higher under cooperative R\&D play than pure competitive play.
+
+\end{proposition}
+
+\begin{proof}
+
+We use backwards induction to solve for the the equilibrium output quantity and R\&D level. (1) Find individually optimal quantity in terms of x and parameters. (2) Find profit function in terms of x and parameters. (3) Maximise individual profits individual profits to obtain solution under pure competitive play. (4) Maximise joint profits to obtain solution under cooperative R\&D play. 
+
+(1)\\
+The profit of firm 1 is given by: 
+\begin{equation*}
+\label{firmProfit}
+    \pi_1 = (a-bQ)q_1 - [\alpha - x_1 -\beta x_2]q_1 - \gamma \frac{x_1^2}{2}    
+\end{equation*}
+
+Firm 1's best response given firm 2's production quantity $q_2$ is 
+\begin{equation*}
+q_1^*(q_2)=\frac{a-bq_2-\alpha+x_1+\beta x_2}{2b}   
+\end{equation*}
+
+The Nash-Cournot equilibrium can be computed to be 
+\begin{equation}
+\label{part1}
+q_1^* = \frac{a-\alpha+(2-\beta)x_1+(2\beta-1)x_2}{3b}
+\end{equation}
+
+(2)\\
+In the first stage, when firms decide on R\&D expenditure, the profit can be expressed as
+\begin{align}
+\label{part2}
+    \pi_1^* &= bq_1^{*2} - \gamma\frac{x_1^2}{2} \\
+    &= \frac{1}{9b}[a-\alpha+(2-\beta)x_1+(2\beta-1)x_2]^2 - \gamma\frac{x_1^2}{2} 
+\end{align}
+
+(3)\\
+The first order condition gives firm 1's best response function\footnote{ The second order condition is $\frac{2(2-\beta)^2}{9b} < \gamma$}
+\begin{align}
+\label{xbr}
+    x_1^{BR}(x_2) = \frac{2(2-\beta)(a-\alpha+(2\beta -1)x_2)}{9b\gamma-2(2-\beta)^2} 
+\end{align}
+
+Assuming a symmetric solution, we obtain
+\begin{align}
+\label{xpart3}
+    x^* = \frac{(a-\alpha)(2-\beta)}{4.5b\gamma-(2-\beta)(1+\beta)} 
+\end{align}
+
+\begin{align*}
+\label{qpart3}
+    q^* = \frac{3\gamma(a-\alpha)}{9b\gamma-2(2-\beta)(1+\beta)} 
+\end{align*}
+
+The profit for each firm is 
+\begin{align*}
+    \pi^* = \frac{1}{9b}[a-\alpha + (1+\beta)x^*] - \gamma\frac{x^{*2}}{2} 
+\end{align*}
+
+(4)\\
+If both firms cooperate at the R\&D stage, assuming a symmetric solution, they choose a R\&D level $x_1 = x_2 = \hat{x}$ to maximise joint profits from \ref{part2}
+\begin{align}
+\label{piPart4}
+\hat{\pi} &= \pi_1^* + \pi_2^*\\
+    &= \frac{1}{9b} \sum_{i=1}^2\left\{[(a-\alpha) + (2-\beta)x_i + (2\beta -1)x_j]^2-\gamma\frac{x_i^2}{2}\right\}
+\end{align}
+
+The symmetric solution is
+\begin{align}
+\label{xpart4}
+\hat{x} = \frac{(a-\alpha)(1+\beta)}{4.5b\gamma-(1+\beta)^2}
+\end{align}
+
+\begin{align}
+\label{qpart4}
+\hat{q} = \frac{3\gammaa(a-\alpha)}{9b\gamma-2(1+\beta)^2}
+\end{align}
+
+The differences in quantity and R\&D expenditure is 
+
+\begin{align*}
+\hat{x} - x^* &= \frac{4.5b \gamma(a-\alpha)(2\beta-1)}{(4.5b\gamma-(1+\beta)^2)(4.5b\gamma-(1+\beta)(2-\beta))}\\
+\hat{q} - q^* &= \frac{6\gamma(a-\alpha)(\beta+1)(2\beta - 1)}{(9b\gamma-2(1+\beta)^2)(9b\gamma-2(2-\beta)(1+\beta))}
+\end{align*}
+
+Thus, for $\beta > \frac{1}{2} $, $\hat{x}>x^*$ and $\hat{q}>q^*$. The corresponding profits are also higher. The reverse is true if $\beta < \frac{1}{2}$.
+
+\end{proof}
+
+Notice that from equation \ref{part1}, $\frac{\partial q_1^*}{\partial x_2} > 0$ if $\beta > \frac{1}{2}$ and $\frac{\partial q_1^*}{\partial x_2} < 0$ if $\beta < \frac{1}{2}$. There are two effects at play here. First, higher R\&D expenditure by firm 2 causes it produces a higher equilibrium quantity because of lower costs. The competition effect then implies that there is less net demand for firm 1 and that it produces less in equilibrium. The spillover effect, captured by the term $\beta$, acts in the opposite direction. A higher R\&D expenditure by firm 2 leads to lower costs for firm 1 and thus a higher equilibrium quantity of production. The net effect of $x_2$ on $q_1$ is therefore dependent on the size of the positive spillovers. For $\beta = \frac{1}{2}$, the competition effect and the spillover effect exactly cancel out, leaving $q_1$ (from equation \ref{part1}) and $x_1^{BR}$ (from equation \ref{xbr}) independent of $x_2$. 
+
+The second order conditions, $9b\gamma > 2(2-\beta)^2$ and $9b\gamma > 2(1+\beta)^2$, ensures that the profit function in equation \ref{part2} is strictly concave in $x_1$. A necessary condition that guarantees the second order conditions is $b\gamma > \frac{8}{9}$. This happens when we have high cost of R\&D ($\gamma$) or high elasticity of demand ($b$).
+
+\begin{proposition}
+\label{socialWelfareResult}
+For large spillovers, $\beta> 0.5$, and under the second order condition, $9b\gamma > 4(1+\beta)^2$, the social welfare is higher in cooperative R\&D play than in pure competitive play but lower than the optimal social welfare under quantity competition. 
+\end{proposition}
+
+\begin{proof}
+
+Since we are considering between two cases where the firms are competing in quantity, we know that $q_i$ can always be expressed as a function of $x_1$ and $x_2$ as in equation \ref{part1}. Since the equilibrium is symmetric, we further have $x_1 = x_2 = x$ and $q_1 = q_2 = \frac{Q}{2}$. Therefore, we can express the welfare function in equation \ref{welfareFunction1} in terms of $x$ as the following
+
+\begin{align*}
+\label{welfareFunction2}
+    W(Q) &= aQ - \frac{1}{2}bQ^2 - \alpha Q + (1+\beta)xQ - \gamma x^2\\
+    W(x) &= \frac{4\beta^2x^2+8\beta x^2-9bx^2\gamma+4x^2+8ax-8\alpha x+8a\beta x-8\alpha \beta x+4a^2+4\alpha^2-8a\alpha}{9b}\\
+    &= \frac{(4\beta^2+8\beta-9b\gamma+4)x^2+(8a-8\alpha+8a\beta-8\alpha \beta)x+(4a^2+4\alpha^2-8a\alpha)}{9b}
+\end{align*}
+
+First order condition gives the optimal level of R\&D under quantity competition to be
+
+\begin{align}
+\label{optimalx}
+    x^{o} = \frac{(a-\alpha)(1+\beta)}{\frac{9}{4}b\gamma-(1+\beta)^2}
+\end{align}
+
+Comparing this with the cooperative R\&D play and pure competitive play levels
+
+\begin{align*}
+    x^{o} - x^* &= \frac{6.75\beta b \gamma(a-\alpha)}{(\frac{9}{4}b\gamma-(1+\beta)^2)(4.5b\gamma-(2-\beta)(1+\beta))}\\
+    x^{o} - \hat{x} &= \frac{2.25 b\gamma (a-\alpha)(\beta+1)}{(4.5b\gamma-(1+\beta)^2)(\frac{9}{4}b\gamma-(1+\beta)^2)}
+\end{align*}
+
+Under the second order condition $9b\gamma > 4(1+\beta)^2$, the social welfare function is strictly concave in $x$. Therefore, we must have $W(x^*) < W(\hat{x}) < W(x^{o})$ for $\beta > \frac{1}{2}$ 
+\end{proof}
+
+\begin{corollary}
+
+Under small spillovers, $\beta < \frac{1}{2}$, social welfare is lower in cooperative R\&D play than in pure competitive play.
+
+\end{corollary}
+
+The result follows directly from the fact that $\hat{x}<x^*$ when $\beta < \frac{1}{2}$. When the positive externality is large, at $x^*$, the gain from cost savings with an collective increase in $x$ is higher than the loss in revenue as a result of higher total quantity. However, when the positive externality is small, at $x^*$, the loss in cost savings from a collective decrease in x is less than the gain in revenue from lower total quantity. Therefore, cooperative R\&D play leads firms to reduce R\&D quantity relative to $x^*$ and we have $\hat{x}<x^*$ when $\beta < \frac{1}{2}$. 
+
+While the above finding shows that cooperative R\&D play is always more profitable, and more socially optimal than pure competitive play when $\beta > 0.5$, there is no guarantee that this is non-cooperatively sustainable since cost savings from reduction in R\&D can be higher than efficiency gains. In fact, we can show that profit maximising firms have an incentive to under-invest in R\&D in the above model when spillover is large and over-invest when spillover is small.
+
+\begin{proposition}
+\label{incentiveToCheat}
+For large spillovers, $\beta > 0.5$, cooperative R\&D play is not non-cooperatively viable because firms have an incentive to under-invest in R\&D. Similarly, for small spillovers, $\beta < 0.5$, cooperative R\&D play is not non-cooperatively viable because firms have an incentive to over-invest in R\&D.
+\end{proposition}
+
+\begin{proof}
+
+It suffice to show that $x_1^{BR}(\hat{x})$ in equation \ref{xbr} is less than $\hat{x}$.
+
+\begin{align*}
+\hat{x} - x_1^{BR}(\hat{x}) &= \frac{(a-\alpha)(1+\beta)}{4.5b\gamma-(1+\beta)^2} - \frac{2(2-\beta)(a-\alpha+(2\beta -1)\hat{x})}{9b\gamma-2(2-\beta)^2}\\
+&=\frac{36ab\beta\gamma-36b\alpha\beta\gamma-18ab\gamma+18b\alpha\gamma}{(9b\gamma-2(1+\beta)^2)(9b\gamma - 2(2-\beta)^2)}\\
+&=\frac{18b\gamma (a-\alpha)(2\beta - 1)}{(9b\gamma-2(1+\beta)^2)(9b\gamma - 2(2-\beta)^2)}
+\end{align*}
+
+Which is strictly greater than zero for $\beta > \frac{1}{2}$ and less than zero when $\beta < \frac{1}{2}$ since $a>\alpha$.
+
+\end{proof}
+
+The intuition for this is simple. When spillover is large, the R\&D model diverges from the standard Cournot model because firms can capture gains of positive spillovers through cooperation. As a result, R\&D expenditure and total quantity is higher under R\&D cooperation play than pure competitive play. However, individual firms have an incentive to cheat by reducing R\&D expenditure to save on costs, therefore making the high level of R\&D expenditure not non-cooperatively viable. On the other hand, when spillover is small, the R\&D model resembles the standard Cournot model because there is little gains to cost savings from cooperation. Therefore, firms rather restrict total output to maximise profit. In this model, this is accomplished by reducing R\&D expenditure relative to the pure competitive play level of R\&D expenditure. However, individual firms have an incentive to cheat by increasing production just as in the Cournot model. This makes the low level of R\&D expenditure not non-cooperatively viable.
+
+\section{Repeated Game}
+
+As a result, in a repeated game setting, the stage game payoffs will be
+
+\begin{table}[h]
+    \centering
+    \setlength{\extrarowheight}{2pt}
+        \begin{tabular}{cc|c|c|}
+          & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Firm $2$}\\
+          & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$x^{BR}$}  & \multicolumn{1}{c}{$\hat{x}$} \\\cline{3-4}
+          \multirow{2}*{Firm $1$}  & $x^{BR}$ & $(\pi^*,\pi^*)$ & $(a,b)$ \\\cline{3-4}
+          & $\hat{x}$ & $(b,a)$ & $(\hat{\pi},\hat{\pi})$ \\\cline{3-4}
+    \end{tabular}
+\end{table}
+
+Here, $x^{BR}$ refers to using a best response defined in equation \ref{xbr} given the other player's strategy. Only when players play their mutual best responses do we obtain the Cournot-Nash payoff $(\pi^*,\pi^*)$. From the above results, we have $a>\hat{\pi}>\pi^*>b$, giving us the standard prisoners' dilemma set up. In line with convention, the first term of the tuple refers to payoff of firm 1 and the second term the payoff of firm 2. In the context of repeated games, \textit{cooperative R\&D play} refers both players playing $\hat{x}$ in every period and \textit{pure competitive play} refers to both players playing $\pi^*$ in every period. In the following analysis we represent the discount rate with $\delta$. 
+
+\begin{proposition}
+In a repeated game with no uncertainty in spillovers and perfect monitoring, cooperative R\&D play is a subgame perfect equilibrium if $\delta \geq \frac{a - \hat{\pi}}{a-\pi^*}$, where $a = \pi_1(x^{BR},\hat{x})$.
+\end{proposition}
+
+\begin{proof}
+Suppose the players use 'Grim Trigger' Strategies:
+
+\textbf{I.} Play $\hat{x}$ in every period unless someone plays $x^{BR}$, in which go to II.\\
+\textbf{II.} Play $x^*$ forever.
+
+It suffice to verify that there is no single period where $i$ can make a profitable deviation.\footnote{This is the 'one-stage deviation principle'} Suppose up to time $t$, $x^*$ has never been played. Then $i$'s payoff looking forward are:
+
+Play $x^{BR}$: $\Rightarrow a + \frac{\delta}{1 - \delta} \pi^*$\\
+Play $\hat{x}$: $\Rightarrow \frac{1}{1-\delta}\hat{\pi}$
+
+So playing $\hat{x}$ is optimal if $\delta \geq \frac{a - \hat{\pi}}{a-\pi^*}$
+
+Suppose that at time $t$, $x^{BR}$ has already been played. Then $j$ will always play $x^*$, so $i$'s payoffs are:
+
+Play $x^{BR}$: $\Rightarrow \frac{1}{1-\delta}\pi^*$\\
+Play $\hat{x}$: $\Rightarrow \frac{1}{1-\delta}b$
+
+So playing $x^{BR}$ is optimal. 
+
+\end{proof}
+
+This shows that with perfect monitoring and no uncertainty in the positive externalitites, cooperative R\&D play is non-cooperatively viable. As a result, although firms have an incentive to cheat in an one-off game, repeated the game infinitely forces a cooperative equilibrium that is welfare improving.
+
+\begin{corollary}
+Following the result in proposition \ref{socialWelfareResult}, in this repeated game, the social welfare is higher under cooperative R\&D play than in pure competitive play if $\beta > \frac{1}{2}$ and lower if $\beta < \frac{1}{2}$.
+\end{corollary}
+
+\newpage
+\section{Introducing Uncertainty}
+
+One peculiar feature of the D'Aspremont and Jacquemin model is its lack of uncertainty. Numerous studies have been done on the stochastic nature of R\&D due to the uncertainty in its payoff. (Reinganum, 1989) Therefore, a reasonable extension of the D'Aspremont and Jacquemin model will be to introduce uncertainty in the amount of positive externality one firm's R\&D has on the other firm's unit production cost. This is motivated by the fact that while firm $i$'s R\&D may be deterministic\footnote{We relax this assumption later on}, its appropriability to firm $j$ varies with firm j's absorptive capacity (Confessore and Mancuso, 2002), patent regulations (Spence, 1984) and imitation costs, all of which can be time variant. Depending on how we model for this uncertainty and the type of monitoring assumed, different equilibrium concepts should be applied. We begin by looking at a simple example of uncertainty and its impact on firm actions and outcomes under different cases of play. \\
+
+\theoremstyle{definition}
+\newtheorem{exmp}{Example}[section]
+\begin{exmp}
+
+Suppose $\beta = 1$ with probability $\frac{1}{2}$ and $\beta = 0$ with probability $\frac{1}{2}$. 
+
+% Set the overall layout of the tree
+\tikzstyle{level 1}=[level distance=3.5cm, sibling distance=3.5cm]
+
+% Define styles for bags and leafs
+\tikzstyle{bag} = [text width=4em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+
+% The sloped option gives rotated edge labels. Personally
+% I find sloped labels a bit difficult to read. Remove the sloped options
+% to get horizontal labels. 
+\begin{center}
+    \begin{tikzpicture}[grow=right]
+        \node[bag] {$\beta$}
+            child {
+                node[bag] {$\beta = 1$}        
+                edge from parent 
+                node[above] {$\frac{1}{2}$}
+            }
+            child {
+                node[bag] {$\beta = 0$}        
+                edge from parent         
+                node[above] {$\frac{1}{2}$}
+            };
+    \end{tikzpicture}
+\end{center}
+\end{exmp}
+
+\textbf{Pure Competitive Play}
+
+Instead of maximising profits in equation \ref{part2}, firms maximise expected profits:
+
+\begin{align*}
+\max_{x_1} E\pi_1 &= \mathop{\mathbb{E}}_\beta[b q_1^{*2} - \gamma\frac{x_1^2}{2}]\\
+&= \mathop{\mathbb{E}}_\beta \frac{1}{9b}[a-\alpha+(2-\beta)x_1+(2\beta-1)x_2]^2 - \gamma\frac{x_1^2}{2}\\
+&= \frac{1}{2} \frac{1}{9b} (a-\alpha + 2x_1 -x_2)^2 + \frac{1}{2} \frac{1}{9b} (a-\alpha + x_1 + x_2)^2 - \gamma \frac{x_1^2}{2}
+\end{align*}
+
+The first order condition gives 
+
+\begin{align*}
+x_1 &= \frac{3(a-\alpha)-x_2}{9b\gamma - 5}
+\end{align*}
+
+Under a symmetric equilibrium
+\begin{align*}
+x^{*U} &= \frac{3(a-\alpha)}{9b\gamma-4}
+\end{align*}
+
+\textbf{Cooperative R\&D play}
+
+The joint profit maximisation problem here is the stochastic analog to equation \ref{piPart4}
+\begin{align*}
+\max_{x} E\Pi &= \mathop{\mathbb{E}}_\beta[\frac{2}{9b}(a-\alpha+(1+\beta)x)^2 - \gamma x^2]\\
+&= \frac{1}{9b} (a-\alpha + x)^2 + \frac{1}{9b} (a-\alpha + 2x)^2 - \gamma x^2
+\end{align*}
+
+The first order condition gives
+\begin{align*}
+\hat{x}^U = \frac{3(a-\alpha)}{9b\gamma - 5}
+\end{align*}
+
+
+
+From equation \ref{xpart3} and \ref{xpart4}, substituting the value $\beta = \frac{1}{2}$ we have
+\begin{align*}
+x^{C} &= \frac{3(a-\alpha)}{9b\gamma-4.5}
+\end{align*}
+
+Therefore, we have $x^{*U}<x^{C}<\hat{x}^U$. That is, R\&D expenditure under pure competitive play with uncertainty is lower than that under cooperative R\&D play under uncertainty. The R\&D expenditure under certainty with $\beta = \frac{1}{2}$ lies in between. 
+
+Under uncertainty, firms select $x_i$ to maximise expected profits over the two states of the world, $\beta = 0$ and $\beta = 1$. In pure competitive play, the spillover effect is small because firms are unable to fully absorb the gains of the spillovers without cooperating in R\&D. Therefore, the low state ($\beta = 0$) has a larger impact and we have $x^{*U}<x^{C}$. In cooperative R\&D play, however, firms are able to fully exploit the positive spillovers through R\&D cooperation. As a result, the high state ($\beta = 1$) has a larger impact and we have $x^{C}<\hat{x}^U$. 
+
+\begin{proposition}
+The above result, $x^{*U}<x^{C}<\hat{x}^U$,  holds for any symmetric two point distribution of $\beta$ around $\frac{1}{2}$.
+\end{proposition}
+
+\begin{proof}
+Suppose $\beta = \frac{1}{2} + \theta$ with probability $\frac{1}{2}$ and $\beta = \frac{1}{2} - \theta$ with probability $\frac{1}{2}$.
+
+Then, we have
+\begin{align*}
+x^{*U} &= \frac{3(a-\alpha)}{9b\gamma - \frac{9}{2} + 2\theta^2}\\
+\hat{x}^{U} &= \frac{3(a-\alpha)}{9b\gamma - \frac{9}{2} - 2\theta^2}\\
+\end{align*}
+And so we have $x^{*U}<x^{C}<\hat{x}^U$ as before. 
+\end{proof}
+
+\begin{corollary}
+
+The above result holds any symmetric distribution of $\beta$ around $\frac{1}{2}$. That is, pure competitive play under uncertainty results in lower R\&D expenditure compared to cooperative R\&D play under uncertainty. 
+\end{corollary}
+
+\begin{proof}
+\textbf{Work in progress.}
+\end{proof}
+
+\begin{corollary}
+Under uncertainty of $\beta$, social welfare level is higher in cooperative R\&D play than in pure competitive play. 
+\end{corollary}
+
+\textbf{Motivating Cooperative Play}
+
+The above result further motivates encouraging cooperative behaviour in firms because cooperation allows firms to capture the positive externalities in the state of the world in which spillover is large. Naturally, this has a positive social welfare impact. 
+
+However, it is not immediately obvious that any kind of cooperation can be sustained between the two firms under uncertainty. In fact, we have already shown in proposition \ref{incentiveToCheat} that firms have incentive to under or over-invest in R\&D without uncertainty depending on the size of the spillover. With uncertainty, it appears prima facie even less likely that cooperation can be sustained since past actions cannot be observed with certainty. The actual result, however, will vary depending on our assumptions of the type of uncertainty firms face. In the repeated games literature, three classes of games have been studied in detail - repeated games with perfect monitoring, repeated games with imperfect public monitoring and repeated games with imperfect private monitoring. Depending on the assumptions of R\&D and its observabiliity, the applicability of these different concepts on our model differs. Generally, unless we have perfect monitoring, we can no longer attain the welfare levels of cooperative R\&D play when uncertainty is introduced. Let us start with the simplest case of perfect monitoring. 
+
+\textbf{Perfect Monitoring}
+
+We assume uncertainty in the parameter $\beta$, which follows a culmulative distribution function $F(\beta)$. Under perfect monitoring, firm $i$ observes $j$'s true R\&D level $x_j$ and positive externality $\beta x_j$ ex-post and can therefore infer the value of the uncertainty parameter $\beta$. This may model a situation where firms have integrated R\&D facilities or information sharing agreements. As a result, because each firm's R\&D effort is observed, cooperative R\&D play can be sustained despite the uncertainty. This conclusion holds regardless of whether the shocks to $x_i$ and $x_j$ are independent.
+
+\begin{proposition}
+In a repeated game with uncertainty and perfect monitoring, cooperative R\&D play is a subgame perfect equilibrium if $\delta \geq \frac{E\pi^{BR} - E\hat{\pi}}{E\pi^{BR}-E\pi^*}$.
+\end{proposition}
+
+\begin{proof}
+The proof is identical to the proof for proposition 4.3, except we now have expected profits over the shock $\theta$, where: 
+\begin{align*}
+E\pi_1^{BR} &= \mathop{\mathbb{E}}_\theta[\pi(x_1^{BR}, \hat{x_2},\theta)]\\
+E\hat{\pi_1} &= \mathop{\mathbb{E}}_\theta[\pi(\hat{x_1}, \hat{x_2},\theta)]\\
+E\pi_1^* &= \mathop{\mathbb{E}}_\theta[\pi(x_1^*,x_2^* ,\theta)]
+\end{align*}
+\end{proof}
+
+\begin{corollary}
+In a repeated game with uncertainty and perfect monitoring, high social welfare (at the cooperative R\&D level) is attainable on average through the use of a 'Grim Trigger' strategy.
+\end{corollary}
+
+\textbf{Imperfect Public Monitoring}
+
+Naturally, it is unrealistic to assume perfect monitoring under uncertainty since shocks to R\&D outcomes are stochastic and unobservable. Moreover, individual firm has no incentive to divulge R\&D expenditure information to the other firm. Therefore, a more reasonable assumption is for firm $i$ to observe the externality, $\beta x_j$, but not $x_j$ itself. However, if firms are unable to observe the R\&D expenditure of the other firm, cooperation cannot be sustained using a grim trigger strategy because they cannot discern cheating from a low realisation of $\beta$. Another limitation of the above analysis is that it assumes private R\&D outcomes are deterministic. This stretches credulity since individual R\&D expenditure are unlikely to translate directly to cost savings with certainty. It is more appropriate to assume that individuals R\&D efforts are also subjected to a stochastic shock. 
+
+To overcome these two problems, we look at a version of our model where a common shock affects the success of both firms' R\&D efforts in reducing production costs. In this model, a total R\&D effort of $x_1 + x_2$ results in the individual cost function, $C(q_i) = (\alpha - \beta(x_1 + x_2))q_i$, $i = 1,2$. Under this model, we assume that both firms observe a public outcome $X = \beta(x_1 + x_2)$ and play public strategies. This model is similar to a team production game where $\beta$ captures to degree of success. This model is applicable to situations where two firms in the same industry are affected by the same shock to R\&D success and public information exists on R\&D outcomes each period. Before we investigate optimal firm behaviour under this model, it is important to define the following terms. 
+
+\begin{definition}{Public Strategy}
+\label{publicStrategy}
+A \textbf{public strategy} for firm $i$ is a sequence of maps $\sigma_{it}: h^t \Rightarrow \Delta(A_i)$,
+\begin{align*}
+  \text{where } &h^t \text{ is the public information at the start of period } t: h^t = (X_1, X_2, ... X_{t-1}) \\
+  &A_i \text{ is the strategy set of firm $i$}\\ 
+  &\Delta(A_i) \text{ is the set of mixed strategies for firm $i$}
+\end{align*}
+\end{definition}
+
+Given the set up of the game, the relevant equilibrium concept here is Perfect Public Equilibrium.
+
+\begin{definition}
+\label{perfectPublicEquilibrium}
+A profile $(\sigma_1,\sigma_2)$ is a \textbf{perfect public equilibrium} if
+\begin{align*}
+  &\textbf{(1) } \sigma_i \text{ is a public strategy for all i}\\ 
+  &\textbf{(2)} \text{ For each date $t$ and history $h^t$, the strategies are a Nash equilibrium from that point on.}
+\end{align*}
+\end{definition}
+
+In our set up, public perfect equilibrium is the relevant equilibrium concept rather than subgame perfect equilibrium because the inclusion of uncertainty does not allow each player to know the action of the other player in the previous time period ($t-1)$. As a result, there is only one information set and no proper subgames and any stage. Subgame perfect equilibrium therefore has no bite here and we use the concept of Nash Equilibrium instead. 
+
+This problem is similar to that addressed in Green and Porter's model of oligopoly collusion under uncertainty (Green and Porter, 1984). Partial cooperation in this repeated game can be sustained by a finite trigger strategy whereby punishment is triggered for $T-1$ periods if the observable $X$ falls below a threshold $\Bar{X}$. Assuming players play the stage-game Nash equilibrium $(x^*,x^*)$ in the punishment phase and $(\mu,\mu)$ in the cooperation phase, a Nash Equilibrium can be wholly characterised by $(x^*,\mu, T, \Bar{X})$. More formally, period t is the cooperation phase if
+
+\begin{align*}
+&t=0 \text{, or}\\
+&t-1 \text{ is a cooperation phase and } y_t>\Bar{y}\\
+&t-T \text{ is a cooperation phase and } y_{t-T}<\Bar{y}  
+\end{align*}
+
+Otherwise, period t is a punishment phase. We can now identify the sufficient condition for the existence such an equilibrium. 
+
+\begin{proposition}
+The necessary condition for the tuple $(x^*,\mu, T, \Bar{X})$ to be a strongly symmetric perfect public equilibrium is the following 
+
+\begin{equation}
+\label{ppeCondition}
+(1- \delta + (\delta-\delta^T)F)\pi_1'(\mu,\mu) + (\pi_1(\mu,\mu) - \pi^*)(\delta - \delta^T)\frac{\Bar{X}}{(x_1 + x_2)^2}f\left(\frac{\Bar{X}}{x_1 + x_2}\right) = 0
+\end{equation}
+
+
+\begin{align*}
+\text{where } &\pi_1'(\mu,\mu) \text{ is the first derivative of firm 1's profit function evaluated at } \mu\\
+&F \text{ is the cumulative distribution of } \beta, \text{evaluated at } \frac{\Bar{X}}{x_1 + x_2}\\
+&f \text{ is the probability distribution of } \beta
+\end{align*}
+\end{proposition}
+
+\begin{proof}
+
+Let $\Pi_1(x_1)$ is the net present value of future payoffs if firm 1 plays $x_1$ in the cooperative phase
+\begin{equation*}
+\Pi_i(x_1) = \mathop{\mathbb{E}}_\beta \sum_{t=0}^\infty \delta^t \pi_i(x_1,x_2,\beta)
+\end{equation*}
+
+Assuming firm $2$ follows the equilibrium strategy, the stationary nature of the game allows us to decompose $\Pi_1(x_1)$ into today's payoff and the expected continuation payoff 
+
+\begin{equation}
+\label{decomposedEquation}
+\Pi_1(x_1) = \pi_1(x_1,\mu) + \delta \Pr(X\geq \Bar{X})\Pi_1(x_1) + \Pr(X< \Bar{X})\left[\sum_{t=1}^{t-1} \delta^t \pi*+\delta^T \Pi_1(x_1)\right]
+\end{equation}
+
+The probabilities can be expressed in terms of the cumulative distribution function F.
+
+\begin{align*}
+\Pr(X < \Bar{X}) &= \Pr(\beta(x_1 + x_2) < \Bar{X})\\
+&= \Pr\left(\beta < \frac{\Bar{X}}{(x_1 +x_2)}\right)\\
+&= F\left(\frac{\Bar{X}}{(x_1 +x_2)}\right)
+\end{align*}
+
+Rearranging and simplifying equation \ref{decomposedEquation}, we have 
+
+\begin{align*}
+\Pi_1(x_1) &= \frac{\pi_1(x_1,\mu) + F \frac{\delta - \delta^T}{1-\delta} \pi^*}{1 - \delta +(\delta - \delta^T)F}\\
+&= \frac{\pi_1(x_1,\mu) -\pi^*}{1 - \delta +(\delta - \delta^T)F} + \frac{\pi^*}{1-\delta}
+\end{align*}
+
+For $(x^*,\mu, T, \Bar{X})$ to be a Nash Equilibrium, we must have 
+\begin{align*}
+\Pi_1(\mu) &\geq \Pi_1(x_1), \quad\text{for all } x_1
+\end{align*}
+
+The first order conditions is
+\begin{align*}
+\Pi_1'(\mu) = 0
+\end{align*}
+
+Which gives
+
+\begin{equation}
+(1- \delta + (\delta-\delta^T)F)\pi_1'(\mu,\mu) + (\pi_1(\mu,\mu) - \pi^*)(\delta - \delta^T)\frac{\Bar{X}}{(x_1 + x_2)^2}f\left(\frac{\Bar{X}}{x_1 + x_2}\right) = 0
+\end{equation}
+
+\end{proof}
+
+Equation \ref{ppeCondition} states the necessary first order condition for the existence of a Nash Equilibrium using a finite period trigger strategy. The LHS term captures the marginal cost of increasing R\&D expenditure while the RHS term captures the marginal benefit of increasing R\&D expenditure which leads to lower risk of reaching the punishment phase. In equilibrium, the two factors sum to zero. 
+
+Unlike the grim trigger strategy, which only reaches a punishment phase one either firm cheats, the finite trigger strategy leads to punishment even when neither party cheats. The idea behind this is that although the punishment phase is triggered by a large negative realisation of $\beta$ and not cheating behaviour, the punishment provides the disincentive against cheating. Thus, in equilibrium, while periods of punishment phases do happen, no firm has an incentive to deviate from their cooperative equilibrium strategy. 
+
+For $(x^*,\mu, T, \Bar{X})$ to be a Nash Equilibrium, we require further that the net present value function $\Pi_1(x_1)$ to be concave in $x_1$. The follow proposition ensures this. 
+
+\begin{proposition}
+If $F(\theta)$ is concave, then $\Pi_1(x_1)$ is concave in $x_1$.
+\end{proposition}
+
+\begin{proof}
+If $F(\theta)$ is a concave function, $F(\frac{\Bar{X}}{x_1 + x_2})$ is convex in $x_1$. Together with the second order conditions, $9b\gamma > 2(2-\beta)^2$ and $9b\gamma > 2(1+\beta)^2$, the profit function in equation \ref{part2} is concave in $x_1$. Therefore, $\Pi_1(x_1)$ is concave in $x_1$.
+\end{proof}
+
+\begin{proposition}
+For any $T, \Bar{X}$, the PPE equilibrium level of R\&D investment, $\mu$, is less than the R\&D cooperative level under uncertainty, $\hat{x}^U$.
+\end{proposition}
+
+\begin{proof}
+\textbf{Work in progress}
+\end{proof}
+
+\textbf{Imperfect Private Monitoring}
+
+An improvement on the imperfect public monitoring model would be to allow individual firm investment to be subjected to different shocks, making the cost function $C(q_i) = (\alpha - \beta_1 x_1 - \beta_2 x_2)q_i$. In this model, each firm observes its own R\&D expenditure and outcome, i.e. both $x_i$ and $\beta_i x_i$, but only the outcome of the other firm's R\&D, $\beta_j x_j$. One may be tempted to attempt cooperation with a similar finite trigger strategy where punishment is meted out when the observed R\&D outome of the other firms falls below a particular threshold, $\Bar{X_j}$. Under this model, however, this is not possible because there is no public outcome on which firms can coordinate punishment action. 
+
+\begin{proposition}
+Under uncertainty and imperfect private monitoring, the finite trigger strategy fails because it is not incentive compatible for a firm to go into the punishment phase even after observing a low realisation of the other firm's R\&D outcome.
+\end{proposition}
+
+\begin{proof}
+\textbf{Work in progress}
+\end{proof}
+
+\section{Comparative Statics}
+
+\section{Implication}
+
+\section{Conclusion}
+
+\bibliography{Reference}
+\bibliographystyle{apalike}
+
+\end{document}
